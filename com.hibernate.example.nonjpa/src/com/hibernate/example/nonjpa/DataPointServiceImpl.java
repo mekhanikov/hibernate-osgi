@@ -24,11 +24,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import aQute.bnd.annotation.component.Component;
+
 import com.hibernate.example.nonjpa.entity.DataPoint;
 
 /**
  * @author Brett Meyer
  */
+@Component
 public class DataPointServiceImpl implements DataPointService {
 	
 	private HibernateUtil hibernateUtil = new HibernateUtil();

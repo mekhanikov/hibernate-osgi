@@ -1,7 +1,9 @@
 
+-includeresource: \
+	META-INF=META-INF, \
+	OSGI-INF=OSGI-INF
 
-
--runfw: org.apache.felix.framework;version='[4.4.0,4.4.0]'
+-runfw: org.eclipse.osgi;version='[3.9.0.v20130529-1710,3.9.0.v20130529-1710]'
 -runee: JavaSE-1.7
 -runsystemcapabilities: ${native_capability}
 
@@ -33,7 +35,19 @@
 	org.dom4j;version=latest,\
 	xml-apis;version=latest,\
 	jaxen;version=1.1.6,\
-	org.apache.karaf.shell.commands;version=2.3.0
+	javax.xml,\
+	javax.xml.stream,\
+		org.apache.felix.configadmin;		version=1.6.0,\
+org.apache.felix.log;				version=1.0.1,\
+org.apache.felix.scr;				version=1.6.0,\
+slf4j.simple;						version=1.7.5,\
+slf4j.api;						version=1.7.5,\
+aQute.configurer;					version=1.0.0,\
+aQute.executor;						version=1.0.0,\
+org.apache.felix.gogo.runtime;		version='[0.10.0,1)',\
+org.apache.felix.gogo.shell;		version='[0.10.0,1)',\
+org.apache.felix.gogo.command;		version='[0.12.0,1)',\
+aQute.logger.intrf;version='[1.0.0,2.0.0)'
 
 	
 
