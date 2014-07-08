@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     version="1.0">
     <persistence-unit name="unmanaged-jpa">
-        <class>org.hibernate.osgitest.entity.DataPoint</class>
+        <class>com.hibernate.example.nonjpa.entity.DataPoint</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         
         <properties>

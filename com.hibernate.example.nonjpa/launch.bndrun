@@ -1,13 +1,11 @@
 
--includeresource: \
-	META-INF=META-INF, \
-	OSGI-INF=OSGI-INF
+	
 
 -runfw: org.eclipse.osgi;version='[3.9.0.v20130529-1710,3.9.0.v20130529-1710]'
 -runee: JavaSE-1.7
 -runsystemcapabilities: ${native_capability}
 
--runsystempackages: javax.xml.stream, com.sun.tools.apt,com.sun.tools.javac,javax.mail.internet
+#-runsystempackages: javax.xml.stream, com.sun.tools.apt,com.sun.tools.javac,javax.mail.internet
 
 -resolve.effective: active
 
@@ -49,7 +47,6 @@ org.apache.felix.gogo.shell;		version='[0.10.0,1)',\
 org.apache.felix.gogo.command;		version='[0.12.0,1)',\
 aQute.logger.intrf;version='[1.0.0,2.0.0)'
 
-	
 
 -runrequires:\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
