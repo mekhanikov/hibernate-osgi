@@ -1,0 +1,30 @@
+Bundle-Version: 0.0.0.${tstamp}
+
+-runsystempackages: javax.xml.stream
+
+-buildpath:  \
+	osgi.core,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation
+	
+
+Private-Package:  \
+	org.apache.tools
+Service-Component:  \
+	*
+	
+Import-Package: \
+            com.sun.tools*;resolution:=optional,\
+            javax.mail.internet;resolution:=optional,\
+            kaffe.util;resolution:=optional,\
+            org.apache.env;resolution:=optional,\
+            org.apache.tools.ant.taskdefs.optional;resolution:=optional,\
+            org.apache.tools.ant.util.java15;resolution:=optional,\
+            sun.rmi.rmic;resolution:=optional,\
+            sun.tools.javac;resolution:=optional,\
+            weblogic;resolution:=optional
+            	
+Export-Package: \
+org.apache.tools.ant.*
+-runfw: org.apache.felix.framework;version='[4.4.0,4.4.0]'
+-runee: JavaSE-1.7
