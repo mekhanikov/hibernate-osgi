@@ -1,9 +1,10 @@
+Bundle-Version: 0.0.0.${tstamp}
+
 -buildpath:  \
 	osgi.core,\
 	osgi.cmpn,\
 	biz.aQute.bnd.annotation
 
-Bundle-Version: 0.0.0.${tstamp}
 Private-Package:  \
 	org.jboss.jandex
 Service-Component:  \

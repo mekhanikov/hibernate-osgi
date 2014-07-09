@@ -1,6 +1,6 @@
 Bundle-Version: 1.0.0.${tstamp}
 
--runsystempackages: javax.xml.stream, javax.persistence, org.hibernate.proxy, javassist.util.proxy 
+ 
 
 
 

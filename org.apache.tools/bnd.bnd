@@ -1,4 +1,4 @@
-Bundle-Version: 0.0.0.${tstamp}
+Bundle-Version: 1.0.0.${tstamp}
 
 -runsystempackages: javax.xml.stream
 
@@ -12,6 +12,10 @@ Private-Package:  \
 	org.apache.tools
 Service-Component:  \
 	*
+	
+ Private-Package: org.apache.tools.*
+ Include-Resource: lib
+ Bundle-ClassPath: ., ant-1.8.1.jar	
 	
 Import-Package: \
             com.sun.tools*;resolution:=optional,\
