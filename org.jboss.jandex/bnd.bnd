@@ -1,19 +1,10 @@
-Bundle-Version: 0.0.0.${tstamp}
-
--buildpath:  \
-	osgi.core,\
-	osgi.cmpn,\
-	biz.aQute.bnd.annotation
+Bundle-Version: 1.0.0.${tstamp}
 
 Private-Package:  \
 	org.jboss.jandex
-Service-Component:  \
-	*
-	
- Private-Package: org.jboss.jandex.*
- Include-Resource: lib
- Bundle-ClassPath: ., jandex-1.1.0.Alpha1.jar
+
+Private-Package: org.jboss.jandex.*
+Include-Resource: lib
+Bundle-ClassPath: ., jandex-1.1.0.Alpha1.jar
  
 Export-Package: org.jboss.jandex.*	
-#-runfw: org.apache.felix.framework;version='[4.4.0,4.4.0]'
-#-runee: JavaSE-1.7

@@ -1,16 +1,9 @@
 Bundle-Version: 1.0.0.${tstamp}
 
- 
-
-
-
 Include-Resource: \
 META-INF/persistence.xml=META-INF/persistence.xml
 
-Export-Package:  \
-	com.hibernate.example.nonjpa.*,\
-	com.hibernate.example.nonjpa.command,\
-	com.hibernate.example.nonjpa.entity
+
 	
 -buildpath:  \
 	osgi.core;version=4.3.1,\
