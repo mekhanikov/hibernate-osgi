@@ -22,24 +22,33 @@ public class Main {
 
 	@Activate
 	void acivate(BundleContext bc) {
-		System.out.println("*** put");
+		System.out.println("*** START");
 		DataPoint dp = new DataPoint();
-		dp.setName( "df" );
-		System.out.println("*** before add");
+		dp.setName( "name" );
 		try {
-		dpService.add( dp );
+			dpService.add( dp );
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("*** after add");
-		//
-		
-		System.out.println("*** get");
+		retrieveAll();
+		DataPoint dataPointUpdated = dpService.get( Long.valueOf( dp.getId() ) );
+		dataPointUpdated.setName( "dataPointUpdated name" );
+		dpService.update( dataPointUpdated );
+		System.out.println("*** get updated");
+		retrieveAll();     
+
+		dpService.deleteAll();
+
+		System.out.println("*** get all, but all is deleted");
+		retrieveAll();
+		System.out.println("*** END");
+	}
+
+	private void retrieveAll() {
 		List<DataPoint> dps = dpService.getAll();
 		for (DataPoint dp2 : dps) {
 			System.out.println(dp2.getId() + ", " + dp2.getName());
 		}
-		//    return null;
 	}
 
 }

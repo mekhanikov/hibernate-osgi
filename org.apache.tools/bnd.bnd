@@ -1,7 +1,5 @@
 Bundle-Version: 1.0.0.${tstamp}
 
-Private-Package:  \
-	org.apache.tools
 
 Private-Package: org.apache.tools.*
 Include-Resource: lib

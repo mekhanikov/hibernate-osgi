@@ -1,7 +1,5 @@
 Bundle-Version: 1.0.0.${tstamp}
 
-Private-Package:  \
-	org.jboss.jandex
 
 Private-Package: org.jboss.jandex.*
 Include-Resource: lib
