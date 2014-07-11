@@ -37,11 +37,16 @@ public class DataPointServiceImpl implements DataPointService {
 	private HibernateUtil hibernateUtil = new HibernateUtil();
 
 	public void add(DataPoint dp) {
+		try {
 		EntityManager em = hibernateUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.persist( dp );
 		em.getTransaction().commit();
-		em.close();
+		em.close();		
+		} catch (Throwable ex) {
+			ex.printStackTrace();
+		}
+
 	}
 
 	public void update(DataPoint dp) {

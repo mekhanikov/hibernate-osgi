@@ -38,19 +38,27 @@ public class HibernateUtil {
 	private EntityManagerFactory emf;
 
 	public EntityManager getEntityManager() {
-		return getEntityManagerFactory().createEntityManager();
+		try {
+			return getEntityManagerFactory().createEntityManager();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	private EntityManagerFactory getEntityManagerFactory() {
+		try {
 		if ( emf == null ) {
+		
 			Bundle thisBundle = FrameworkUtil.getBundle( HibernateUtil.class );
 			// Could get this by wiring up OsgiTestBundleActivator as well.
 			BundleContext context = thisBundle.getBundleContext();
-
-			ServiceReference serviceReference = context.getServiceReference( PersistenceProvider.class.getName() );
+			ServiceReference<?> serviceReference = context.getServiceReference( PersistenceProvider.class.getName() );
 			PersistenceProvider persistenceProvider = (PersistenceProvider) context.getService( serviceReference );
-
 			emf = persistenceProvider.createEntityManagerFactory( "unmanaged-jpa", null );
+		}
+		} catch (Throwable e) {
+			e.printStackTrace();
 		}
 		return emf;
 	}

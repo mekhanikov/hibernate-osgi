@@ -23,6 +23,9 @@ package com.hibernate.example.nonjpa.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
 
 /**
  * @author Brett Meyer
@@ -33,6 +36,10 @@ public class DataPoint {
 	@GeneratedValue
 	private long id;
 	
+	@NotNull
+	private Integer someInt;
+	
+	@Email
 	private String name;
 
 	public long getId() {
@@ -43,6 +50,7 @@ public class DataPoint {
 		this.id = id;
 	}
 
+	
 	public String getName() {
 		return name;
 	}
@@ -50,4 +58,14 @@ public class DataPoint {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public Integer getSomeInt() {
+		return someInt;
+	}
+
+	
+	public void setSomeInt(Integer someInt) {
+		this.someInt = someInt;
+	}
+	
 }
