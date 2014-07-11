@@ -13,7 +13,7 @@ javax.validation.*,\
 	com.hibernate.example.nonjpa.entity
 
 
-Bundle-ClassPath: ., validation-api-1.1.0.Final.jar, hibernate-validator-5.1.1.Final.jar
+Bundle-ClassPath: ., hibernate-validator-5.1.1.Final.jar
 	
 -buildpath:  \
 	osgi.core;version=4.3.1,\
@@ -37,7 +37,8 @@ Bundle-ClassPath: ., validation-api-1.1.0.Final.jar, hibernate-validator-5.1.1.F
 	org.jboss.logging.jboss-logging;version=3.1,\
 	org.apache.felix.gogo.command;version=0.12,\
 	org.apache.felix.gogo.runtime;version=0.10,\
-	org.jboss.jandex;version=latest
+	org.jboss.jandex;version=latest,\
+	javax.validation.api
 
 	
 Service-Component:  \

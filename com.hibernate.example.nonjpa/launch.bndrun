@@ -5,6 +5,7 @@
 -resolve.effective: active
 
 -runbundles:  \
+	classmate;version=0.8.0,\
 	org.apache.geronimo.specs.geronimo-jta_1.1_spec;version=1.1.1,\
 	org.hibernate.javax.persistence.hibernate-jpa-2.1-api;version=1.0.0,\
 	org.apache.commons.collections;version=3.2.1,\
@@ -15,7 +16,6 @@
 	org.apache.servicemix.bundles.antlr;version=2.7.7.5,\
 	org.apache.servicemix.bundles.dom4j;version=1.6.1.5,\
 	org.jboss.jandex;version=latest,\
-	classmate;version=0.8.0,\
 	org.jboss.logging.jboss-logging;version=3.1.0,\
 	javassist;version=3.18.1,\
 	org.hibernate.common.hibernate-commons-annotations;version=4.0.3,\
