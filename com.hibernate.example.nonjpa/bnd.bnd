@@ -1,9 +1,19 @@
 Bundle-Version: 1.0.0.${tstamp}
 
 Include-Resource: \
-META-INF/persistence.xml=META-INF/persistence.xml
+META-INF/persistence.xml=META-INF/persistence.xml,\
+lib
+
+Private-Package: \
+com.thoughtworks.paranamer*,\
+org.hibernate.validator.*,\
+javax.validation.*,\
+	com.hibernate.example.nonjpa,\
+	com.hibernate.example.nonjpa.command,\
+	com.hibernate.example.nonjpa.entity
 
 
+Bundle-ClassPath: ., validation-api-1.1.0.Final.jar, hibernate-validator-5.1.1.Final.jar
 	
 -buildpath:  \
 	osgi.core;version=4.3.1,\
@@ -29,10 +39,6 @@ META-INF/persistence.xml=META-INF/persistence.xml
 	org.apache.felix.gogo.runtime;version=0.10,\
 	org.jboss.jandex;version=latest
 
-Private-Package:  \
-	com.hibernate.example.nonjpa,\
-	com.hibernate.example.nonjpa.command,\
-	com.hibernate.example.nonjpa.entity
 	
 Service-Component:  \
 	*
@@ -42,7 +48,20 @@ org.h2,\
 javax.persistence;version="[1.0.0,2.1.0]",\
 org.hibernate.proxy,\
 javassist.util.proxy,\
-* 
+* ,\
+com.thoughtworks.paranamer*,\
+javax.validation.*,\
+org.hibernate.validator.*,\
+	com.hibernate.example.nonjpa,\
+	com.hibernate.example.nonjpa.command,\
+	com.hibernate.example.nonjpa.entity
+	
+Export-Package: \
+org.hibernate.validator.*,\
+javax.validation.*,\
+	com.hibernate.example.nonjpa,\
+	com.hibernate.example.nonjpa.command,\
+	com.hibernate.example.nonjpa.entity
 	
 -runfw: org.apache.felix.framework;version='[4.4.0,4.4.0]'
 -runee: JavaSE-1.7

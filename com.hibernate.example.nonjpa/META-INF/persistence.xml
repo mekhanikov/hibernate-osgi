@@ -13,6 +13,9 @@
             <property name="hibernate.connection.username" value="sa"/>
             <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            
+            <property name="show_sql" value="true"/>
+            <property name="javax.persistence.validation.mode" value="callback, ddl"/>
         </properties>
     </persistence-unit>
 </persistence>

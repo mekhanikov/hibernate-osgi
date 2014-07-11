@@ -23,7 +23,9 @@ package com.hibernate.example.nonjpa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.spi.PersistenceProvider;
+import javax.validation.spi.ValidationProvider;
 
+import org.hibernate.validator.HibernateValidator;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
@@ -38,19 +40,37 @@ public class HibernateUtil {
 	private EntityManagerFactory emf;
 
 	public EntityManager getEntityManager() {
-		return getEntityManagerFactory().createEntityManager();
+		try {
+			return getEntityManagerFactory().createEntityManager();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	private EntityManagerFactory getEntityManagerFactory() {
+		try {
 		if ( emf == null ) {
+		
 			Bundle thisBundle = FrameworkUtil.getBundle( HibernateUtil.class );
 			// Could get this by wiring up OsgiTestBundleActivator as well.
 			BundleContext context = thisBundle.getBundleContext();
+			HibernateValidator h = new HibernateValidator();
+			context.registerService(ValidationProvider.class, new HibernateValidator(), null);
+			ServiceReference serviceReference2 = context.getServiceReference( ValidationProvider.class.getName() );
+			ValidationProvider hibernateValidator = (ValidationProvider) context.getService( serviceReference2 );
 
 			ServiceReference serviceReference = context.getServiceReference( PersistenceProvider.class.getName() );
 			PersistenceProvider persistenceProvider = (PersistenceProvider) context.getService( serviceReference );
+			
+
+			
+			
 
 			emf = persistenceProvider.createEntityManagerFactory( "unmanaged-jpa", null );
+		}
+		} catch (Throwable e) {
+			e.printStackTrace();
 		}
 		return emf;
 	}
