@@ -36,5 +36,6 @@
 	javax.inject,\
 	joda-time,\
 	org.jsoup,\
-	com.hibernate.example.nonjpa;version=latest
+	com.hibernate.example.nonjpa;version=latest,\
+	javax.validation.api
 
