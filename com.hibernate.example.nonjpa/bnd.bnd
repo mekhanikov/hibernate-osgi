@@ -4,6 +4,7 @@ Include-Resource: \
 META-INF/persistence.xml=META-INF/persistence.xml,\
 lib
 
+
 Private-Package: \
 com.thoughtworks.paranamer*,\
 org.hibernate.validator.*,\

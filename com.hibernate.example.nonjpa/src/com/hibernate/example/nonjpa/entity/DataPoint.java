@@ -26,6 +26,8 @@ import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Email;
+
 /**
  * @author Brett Meyer
  */
@@ -36,9 +38,9 @@ public class DataPoint {
 	private long id;
 	
 	@NotNull
-	@Valid
 	private Integer someInt;
 	
+	@Email
 	private String name;
 
 	public long getId() {
